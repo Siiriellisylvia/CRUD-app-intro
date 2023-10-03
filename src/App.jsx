@@ -1,18 +1,16 @@
 import { Routes, Route, Navigate } from "react-router-dom";
-import Nav from "./components/Nav";
+import NavBar from "./components/NavBar";
 import HomePage from "./pages/HomePage";
-import AboutPage from "./pages/AboutPage";
-import ContactPage from "./pages/ContactPage";
+import CreatePage from "./pages/CreatePage";
 
 function App() {
     return (
         <>
-            <Nav />
+            <NavBar />
             <main>
                 <Routes>
                     <Route path="/" element={<HomePage />} />
-                    <Route path="/about" element={<AboutPage />} />
-                    <Route path="/contact" element={<ContactPage />} />
+                    <Route path="/create" element={<CreatePage />} />
                     <Route path="*" element={<Navigate to="/" />} />
                 </Routes>
             </main>
