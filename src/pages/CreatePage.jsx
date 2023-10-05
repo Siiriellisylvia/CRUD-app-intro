@@ -1,9 +1,11 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function CreatePage() {
 
     const [caption, setCaption] = useState("")
     const [image, setImage] = useState("")
+    const navigate =useNavigate()
 
     async function createPost(event) {
         event.preventDefault()
@@ -20,6 +22,11 @@ export default function CreatePage() {
         body: JSON.stringify(newPost)
     });
 
+    if (response.ok) {
+    navigate("/")
+    } else {
+        console.log("Something went wrong")
+    }
     }
 
     return (
@@ -30,6 +37,7 @@ export default function CreatePage() {
                 <label>Caption</label>
                 <input 
                     type="text" 
+                    required
                     placeholder="Type a caption"
                     value={caption} 
                     onChange={event=>setCaption(event.target.value)}>
@@ -38,6 +46,7 @@ export default function CreatePage() {
                 <label>Image</label>
                 <input 
                     type="url" 
+                    required
                     placeholder="Paste an image url"
                     value={image} 
                     onChange={event =>setImage(event.target.value)}>
