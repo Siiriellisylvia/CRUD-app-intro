@@ -19,10 +19,13 @@ export default function HomePage() {
 
 
     return (
+        <section className="page">
+            <h1>Home</h1>
         <section className="grid">
             {posts.map(post => (
                 <Post post={post} key={post.id} />
             ))}
+        </section>
         </section>
     );
 }
