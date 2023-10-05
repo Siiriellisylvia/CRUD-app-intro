@@ -30,6 +30,7 @@ export default function CreatePage() {
                 <label>Caption</label>
                 <input 
                     type="text" 
+                    placeholder="Type a caption"
                     value={caption} 
                     onChange={event=>setCaption(event.target.value)}>
                 </input>
@@ -37,6 +38,7 @@ export default function CreatePage() {
                 <label>Image</label>
                 <input 
                     type="url" 
+                    placeholder="Paste an image url"
                     value={image} 
                     onChange={event =>setImage(event.target.value)}>
                 </input>
